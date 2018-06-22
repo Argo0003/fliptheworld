@@ -128,11 +128,11 @@ a
 			right: 50px
 		right: 0
 		line-height: 65px
-		color: #FF709C
+		color: lighten($accent, 30)
 		cursor: pointer
 		transition: color .25s ease
 		&:hover
-			color: lighten(#FF709C, 15)
+			color: lighten($accent, 30)
 	.search-field	
 		position: absolute
 		top: 65px
@@ -204,7 +204,6 @@ section
 		top: $gutter
 		bottom: $gutter
 	h2 	
-		text-transform: uppercase
 		margin: 0
 		font-size: 23px
 		font-weight: 800
@@ -777,15 +776,19 @@ a.world-list-item
 
 .article-body
 	p 
-		margin: 25px 0
+		margin: 15px 0
 		line-height: 1.6
 	img 
 		display: block
 		max-width: 100%
 		height: auto
 		margin: auto
+		padding-top: $gutter
 	h2,h3,h4,h5,h6 
 		line-height: 1.2 
+	h4 
+		margin-top: 25px
+		margin-bottom: 0
 	blockquote 
 		padding: $gutter
 		margin: $gutter*2 $gutter*2.5 
@@ -1239,5 +1242,53 @@ a.world-list-item
 		font-family: baron-f, sans-serif
 	span 
 		color: #000000
+	
+.scroll-top 
+	display: none 
+	width: 52px
+	height: 52px
+	line-height: 50px
+	background-color: rgba($accent, .6)
+	border-radius: 10em
+	font-size: 32px 
+	color: rgba(#ffffff, .6)
+	position: fixed
+	right: 23px
+	bottom: 15px
+	cursor: pointer
+	text-align: center
+	&:hover
+		color: rgba(#ffffff, .9)
+	&:focus
+		color: rgba(#ffffff, .6)
+
+.latest-comments
+	font-size: 14px
+	text-align: left
+	color: #333333
+	line-height: 1.45
+	border: 1px solid #eeeeee
+	padding: 10px 20px
+	.dsq-widget-list
+		margin: $gutter/2 0 
+		padding: 0
+	.dsq-widget-user
+		color: $accent
+		&::after
+			content: ':'
+	.dsq-widget-item
+		margin: $gutter/2 0
+		padding: $gutter/2 0
+		border-bottom: 1px solid #eeeeee
+		position: relative
+		padding-left: 40px
+		.dsq-widget-avatar
+			position: absolute
+			left: 0
+		&:last-child
+			border-bottom: none
+	
+
+
 
 @import "media" // Always at the end

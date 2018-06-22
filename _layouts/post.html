@@ -1,86 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% include /header-page.html %}
 
-<head>
+{% include /top-line.html %}
 
-	<meta charset="utf-8">
-	<base href="/"> 
-
-	<title>FliptheWorld - Все самое интересное здесь!</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
-	
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#DF3167">
-	<!-- Custom Browsers Color End -->
-
-	<link rel="stylesheet" href="css/main.min.css">
-
-</head>
-
-<body class="article-page">
-	<header class="top-line">
-		<a href="" class="logo logo-litera">FliptheWOrld</a>
-
-		<div class="search-wrap">
-			<div class="search" title="Поиск по сайту..."><div class="fa fa-search"></div></div>
-			<div class="search-field">
-					<form action="/search.html" id="cse-search-box">
-						<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
-						<input type="hidden" name="cof" value="FORID:10" />
-						<input type="hidden" name="ie" value="UTF-8" />
-						<input type="text" name="q" placeholder="Поиск по сайту..." />
-					</form>
-			</div>
-		</div>
-
-		<div class="mobile-menu-button"><i class="fa fa-bars"></i></div>
-		<nav class="main-menu top-menu">
-			<ul>
-				<li><a href="http://localhost:3000/">Главная</a></li>
-				<li  class="active"><a href="http://localhost:3000/world.html">Мир</a></li>
-				<li><a href="#">Россия</a></li>
-				<li class="dd-list">
-					<div>Категории</div>
-					<div class="dd-links">
-						<a href="#">Наука и техника</a>
-						<a href="#">Искусство</a>
-						<a href="#">Кулинария</a>
-						<a href="#">Приключения</a>
-					</div>
-				</li>
-				<li><a href="#">О сайте</a></li>
-			</ul>
-		</nav>
-	</header>
-
-
-	
-	<div class="article-header overlay" style="background-image: url(img/1525365330_1525365382.jpg)">
+	<div class="article-header overlay" style="background-image: url({{ page.image }})">
 
 		<div class="article-header-content">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-7 col-md-8">
 						<div class="article-header-meta">
-							<a href="#" class="article-categore-link">Что интересного в мире</a>
-							<span class="date">14/05/2018</span>
-							<h1>Самые невероятные кинотеатры мира</h1>
+							<a href="{{ site.category_dir }}/{{ page.categories }}" class="article-categore-link">{{ page.catname }}</a>
+							<span class="date">{{ page.date | date: '%d' }}/{{ page.date | date: '%m' }}/{{ page.date | date: '%Y' }}</span>
+							<h1>{{ page.title }}</h1>
 							<div class="item-social">
 								<div class="item-comments" title="Количество коментариев">
-									<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
+									<i class="fa fa-comment"></i><a href="{{ page.url }}#disqus_thread" class="item-comments-count"></a>
 								</div>
 								<div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
 								
-								<div class="likely likely-custom" data-media="img/Rus_st.jpg" data-title="Самые необычные рестораны России">
+								<div class="likely likely-custom" date-url="{{ site.url }}{{ page.url }}" data-media="{{ site.url }}/{{ page.image }}" data-title="{{ page.title }}">
 									<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
 									<div class="facebook" title="Поделиться в Facebook">Facebook</div>
 									<div class="twitter" title="Поделиться в Twitter">Twitter</div>
@@ -104,35 +42,27 @@
 						<nav class="breadcrumbs">
 							<ul>
 								<li>
-									<a href="#">Главная</a>
+									<a href="{{ site.baseurl }}">Главная</a>
 								</li>
 								<li>
-									<a href="#">Мир</a>
+									<a href="{{ site.category_dir }}/{{ page.categories }}">{{ page.catname }}</a>
 								</li>
-								<li class="active">Самые невероятные кинотеатры мира</li>
+								<li class="active">{{ page.title }}</li>
 							</ul>
 						</nav>
 						
 						<div class="article-body">
+
 							<div class="ad article-top-ad">
-								<img src="img/ad/ad-horizontal.jpg" alt="ad" class="img-responsive">
+{% include /ad-type-1.html %}
 							</div>
-							<blockquote>Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Взгляд, которое реторический большого алфавит строчка свое страну семантика, пор предупредила, имеет ведущими возвращайся буквенных домах над продолжил за города? </blockquote>
-							<p>Конечно сейчас есть масса возможностей смотреть фильмы онлайн бесплатно новинки и не в худших условиях, чем в кинотеатре, однако сам поход в кино ничто не заменит, тем более если это будет один из самых необычных кинотеатров в мире. Атмосферу кинотеатра очень сложно воссоздать в домашних условиях, пусть даже есть самая новейшая техника и все возможности для этого. Но вспомните с каким рвением вы бежали в кино в детстве или ходили на первые свидания, эти ощущения ничем не заменить. Сегодня мы расскажем какие же самые необычные кинотеатры есть в мире.
-							</p>
-							<img src="img/1525365426_1.png" class="img-responsive" alt="alt">
-							<p>Конечно сейчас есть масса возможностей смотреть фильмы онлайн бесплатно новинки и не в худших условиях, чем в кинотеатре, однако сам поход в кино ничто не заменит, тем более если это будет один из самых необычных кинотеатров в мире. Атмосферу кинотеатра очень сложно воссоздать в домашних условиях, пусть даже есть самая новейшая техника и все возможности для этого. Но вспомните с каким рвением вы бежали в кино в детстве или ходили на первые свидания, эти ощущения ничем не заменить. Сегодня мы расскажем какие же самые необычные кинотеатры есть в мире.
-							</p>
-							<img src="img/1525365426_1.png" class="img-responsive" alt="alt">
-							<p>Конечно сейчас есть масса возможностей смотреть фильмы онлайн бесплатно новинки и не в худших условиях, чем в кинотеатре, однако сам поход в кино ничто не заменит, тем более если это будет один из самых необычных кинотеатров в мире. Атмосферу кинотеатра очень сложно воссоздать в домашних условиях, пусть даже есть самая новейшая техника и все возможности для этого. Но вспомните с каким рвением вы бежали в кино в детстве или ходили на первые свидания, эти ощущения ничем не заменить. Сегодня мы расскажем какие же самые необычные кинотеатры есть в мире.
-							</p>
-							<img src="img/1525365426_1.png" class="img-responsive" alt="alt">
-							<p>Конечно сейчас есть масса возможностей смотреть фильмы онлайн бесплатно новинки и не в худших условиях, чем в кинотеатре, однако сам поход в кино ничто не заменит, тем более если это будет один из самых необычных кинотеатров в мире. Атмосферу кинотеатра очень сложно воссоздать в домашних условиях, пусть даже есть самая новейшая техника и все возможности для этого. Но вспомните с каким рвением вы бежали в кино в детстве или ходили на первые свидания, эти ощущения ничем не заменить. Сегодня мы расскажем какие же самые необычные кинотеатры есть в мире.
-								</p>
+
+							{{ content }}
+
 						</div>
 
 						<div class="likely-in-article">
-							<div class="likely" data-media="img/Rus_st.jpg" data-title="Самые необычные рестораны России">
+							<div class="likely" date-url="{{ site.url }}{{ page.url }}" data-media="{{ site.url }}/{{ page.image }}" data-title="{{ site.url }}/{{ page.title }}">
 								<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
 								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
 								<div class="twitter" title="Поделиться в Twitter">Twitter</div>
@@ -142,148 +72,35 @@
 						</div>
 
 						<div class="ad article-top-ad">
-							<img src="img/ad/ad-horizontal.jpg" alt="ad" class="img-responsive">
+{% include /ad-type-1.html %}
 						</div> 
 
 						<div class="read-more">
 							<div class="read-more-header">Читать еще:</div>
 							<ul>
-								<li><a href="#">Автомобиль с газотурбинными двигателями</a></li>
-								<li><a href="#">Автомобиль с газотурбинными двигателями</a></li>
-								<li><a href="#">Автомобиль с газотурбинными двигателями</a></li>
-								<li><a href="#">Автомобиль с газотурбинными двигателями</a></li>
-								<li><a href="#">Автомобиль с газотурбинными двигателями</a></li>
+								{% capture related_posts %}{{ page.categories }}{% endcapture %}
+								{% assign collection = site.categories[related_posts] %}
+								{% for article in collection limit: 6 %}
+									{% unless page.url == article.url %}
+									<li><a href="{{ article.url }}">{{ article.title }}</a></li>
+									{% endunless %}
+								{% endfor %}
 							</ul>
-						</div>
+						</div>  
 
 						<div class="comments">
-							Comments
+{% include /comments.html %}
 						</div>
 					</article>
 
 				</div>
 				<div class="col-md-4">
 
-						<aside class="main-aside">
-								<div class="aside-box">
-									<img src="img/ad/ad-vertical.jpg" alt="alt" class="img-responsive">
-								</div>
-	 
-								<div class="aside-box">
-									<div class="latest-box">
-										<div class="lb-header">
-											Последние статьи:
-										</div>
-	 
-										<div class="lb-list">
-										 <div class="lb-item">
-											 <a href="#" class="lb-catname">Россия</a>
-											 <div class="lb-body">
-												 <a href="#" class="lb-body-header">Самые необычне рестораны России</a>
-												 <div class="lb-footer">
-													 <div class="item-comments" title="Количество комментариев">
-														 <i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-														 <span class="date">25/05/2018</span>
-													 </div>
-												 </div>
-											 </div>
-										 </div>
-	 
-										 <div class="lb-item">
-											 <a href="#" class="lb-catname">Мир</a>
-											 <div class="lb-body">
-												 <a href="#" class="lb-body-header">В Монако презентовали новый проект по расширению территории княжества</a>
-												 <div class="lb-footer">
-													 <div class="item-comments" title="Количество комментариев">
-														 <i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-														 <span class="date">25/05/2018</span>
-													 </div>
-												 </div>
-											 </div>
-										 </div>
-	 
-										 <div class="lb-item">
-											 <a href="#" class="lb-catname">Искусство</a>
-											 <div class="lb-body">
-												 <a href="#" class="lb-body-header">Куда пойти на "Ночь в музее" в Москве</a>
-												 <div class="lb-footer">
-													 <div class="item-comments" title="Количество комментариев">
-														 <i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-														 <span class="date">25/05/2018</span>
-													 </div>
-												 </div>
-											 </div>
-										 </div>
-	 
-										 <div class="lb-item">
-											 <a href="#" class="lb-catname">Россия</a>
-											 <div class="lb-body">
-												 <a href="#" class="lb-body-header">Самые необычне рестораны России</a>
-												 <div class="lb-footer">
-													 <div class="item-comments" title="Количество комментариев">
-														 <i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-														 <span class="date">25/05/2018</span>
-													 </div>
-												 </div>
-											 </div>
-										 </div>
-										</div>
-	 
-									</div>
-								</div>
-	 
-								<div class="aside-box">
-									latest comments
-								</div>
-	 
-							</aside>
+{% include /main-aside.html %}
 
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<footer class="main-footer">
-		<div class="container">
-
-			<nav class="main-menu footer-menu">
-					<ul>
-							<li class="active"><a href="#">Главная</a></li>
-							<li><a href="#">Мир</a></li>
-							<li><a href="#">Россия</a></li>
-							<li class="dd-list">
-								<div>Категории</div>
-								<div class="dd-links">
-									<a href="#">Наука и техника</a>
-									<a href="#">Искусство</a>
-									<a href="#">Кулинария</a>
-									<a href="#">Приключения</a>
-								</div>
-							</li>
-							<li><a href="#">О сайте</a></li>
-					</ul>
-			</nav>
-
-			<nav class="soc">
-				<ul>
-					<li><a href="#"><i class="fa fa-vk"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-rss"></i></a></li>
-				</ul>
-			</nav>
-
-		</div>
-	</footer>
-	<footer class="bottom-footer">
-		<div class="container text-center">
-			<div class="footer-copy">2018 © <span class="logo logo-footer logo-litera">FliptheWOrld</span></div>
-			<p>Копирование контента и размещение на других сайтах запрещено</p>
-		</div>
-	</footer>
-
-	<script src="js/scripts.min.js"></script>
-
-</body>
-</html>
+{% include /footer.html %}

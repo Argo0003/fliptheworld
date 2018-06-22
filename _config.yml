@@ -11,8 +11,8 @@ imagehome:
 plugins: [jekyll-paginate-v2]
 category_dir: blog
 pagination:
-  enable: true
-  per_page: 9 
+  enabled: true
+  per_page: 9
   title: ':title - Страница :num'
   limit: 0
   sort_field: 'date'

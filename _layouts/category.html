@@ -1,75 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% include /header-category.html %}
 
-<head>
-
-	<meta charset="utf-8">
-	<base href="/"> 
-
-	<title>FliptheWorld - Все самое интересное здесь!</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
-	
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#DF3167">
-	<!-- Custom Browsers Color End -->
-
-	<link rel="stylesheet" href="css/main.min.css">
-
-</head>
-
-<body>
-	<header class="top-line">
-		<a href="" class="logo logo-litera">FliptheWOrld</a>
-
-		<div class="search-wrap">
-			<div class="search" title="Поиск по сайту..."><div class="fa fa-search"></div></div>
-			<div class="search-field">
-					<form action="/search.html" id="cse-search-box">
-						<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
-						<input type="hidden" name="cof" value="FORID:10" />
-						<input type="hidden" name="ie" value="UTF-8" />
-						<input type="text" name="q" placeholder="Поиск по сайту..." />
-					</form>
-			</div>
-		</div>
-
-		<div class="mobile-menu-button"><i class="fa fa-bars"></i></div>
-		<nav class="main-menu top-menu">
-			<ul>
-				<li><a href="http://localhost:3000/">Главная</a></li>
-				<li  class="active"><a href="http://localhost:3000/world.html">Мир</a></li>
-				<li><a href="#">Россия</a></li>
-				<li class="dd-list">
-					<div>Категории</div>
-					<div class="dd-links">
-						<a href="#">Наука и техника</a>
-						<a href="#">Искусство</a>
-						<a href="#">Кулинария</a>
-						<a href="#">Приключения</a>
-					</div>
-				</li>
-				<li><a href="#">О сайте</a></li>
-			</ul>
-		</nav>
-	</header>
+{% include /top-line.html %}
 
 	<div class="pattern pattern-world-header">
-		<div class="world-header" style="background-image: url(img/world-header.jpg);">
+		<div class="world-header" style="background-image: url({{ page.image }});">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-7">
 						<div class="world-header-box">
 							<h1>
-								Что интеренсого в мире?
+								{{ page.description }}
 							</h1>
 						</div>
 					</div>
@@ -83,58 +23,18 @@
 			<div class="row">
 
 				<div class="col-md-12 ad top-ad">
-					<img src="img/ad/ad-horizontal.jpg" alt="alt" class="img-responsive">
+{% include /ad-type-1.html %}
 				</div>
 
-				<div class="col-md-7">
-					<div class="type-one-first">
-						<a href="#">
-							<div class="pattern">
-								<div class="overlay">
-									<img src="img/7b5c9f83-8d2f-469c-9c40-190510711add.jpg" alt="alt" class="img-responsive  img-width">
-								</div>
-							</div>
-						</a>
-						<div class="item-social">
-								<div class="item-comments" title="Количество коментариев">
-									<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-								</div>
-								<span class="date">17/05/2018</span>
-						</div>
-						<h3><a href="#">Куда пойти на "Ночь в музее" в Москве</a></h3>
-					</div>  
-				</div>
+{% for post in paginator.posts limit: 1 offset: 0 %}
+{% include /home-type-one-section-item-1.html %}
+{% endfor %}
+
 				<div class="col-md-5 item-title-white">
-					<div class="pattern">
-									<div class="overlay item-title" style="background-image: url(img/7b5c9f83-8d2f-469c-9c40-190510711add.jpg)">
-										<div class="item-title-content">
-											<h3><a href="#">Куда пойти на "Ночь в музее" в Москве</a></h3>
-			
-											<div class="item-social">
-												<div class="item-comments" title="Количество коментариев">
-													<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-												</div>
-												<span class="date">17/05/2018</span>
-											</div>		
-										</div>
-									</div>
-					</div>
-					<div class="pattern">
-							<div class="overlay item-title" style="background-image: url(img/7b5c9f83-8d2f-469c-9c40-190510711add.jpg)">
-								<div class="item-title-content">
-									<h3><a href="#">Куда пойти на "Ночь в музее" в Москве</a></h3>
-	
-									<div class="item-social">
-										<div class="item-comments" title="Количество коментариев">
-											<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-										</div>
-										<span class="date">17/05/2018</span>
-									</div>		
-								</div>
-							</div>
-						</div> 
+{% for post in paginator.posts limit: 2 offset: 1 %}
+{% include /home-type-one-section-item-2.html %}
+{% endfor %}
 				</div>
-				
 			</div>
 		</div>
 	</section>
@@ -145,264 +45,51 @@
 				<div class="col-md-8">
 
 						<div class="world-list-wrap">
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
-
-							<a href="#" class="world-list-item">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="pattern">
-												<img src="img/Rus_st.jpg" alt="alt" class="img-responsive overlay">
-											</div>
-
-										</div>
-										<div class="col-md-6">
-											<h3>Самые необычные рестораны России</h3>
-											<div class="date">21/05/2018</div>
-											<p>Старый Арбат в Москве – место само по себе уникальное, где всегда полно как туристов, так и местных жителей. Посреди улицы стоит синий троллейбус, не тот который возит пассажиров по маршруту, а тот, который стал знаменитым бард-кафе. </p>
-										</div>
-									</div>
-									
-							</a>
+{% for post in paginator.posts offset: 3 %}
+{% include /category-list-item.html %}
+{% endfor %}
 						</div>
 
 						<div class="pagination pagination-smoll text-center d-md-none">
-							<a href="#" class="btn">Следующая страница <i class="fa fa-angle-double-right"></i></a>
+
+							{% if paginator.total_pages > 1 %}
+								{% if paginator.next_page %}
+								<a href="{{ paginator.next_page_path }}" class="btn">Следующая страница <i class="fa fa-angle-double-right"></i></a>
+								{% endif%}
+							{% endif %}
+
+							{% if paginator.page_trail %}
 							<div class="pagination-links">
+
+								{% if paginator.previous_page %}
+								<a href="{{ paginator.previous_page_path }}" class="pagination-links-left" title="Предыдущая страница">&laquo;</a>
+								{% else %}
 								<span class="pagination-links-left" title="Предыдущая страница">&laquo;</span>
-								<span class="active">1</span>
-								<a href="#">2</a>
-								<a href="#">3</a>
-								<a href="#">4</a>
-								<a href="#">5</a>
-								<a href="" class="pagination-links-right" title="Следующая страница">&raquo;</a>
+								{% endif %}
+	
+								{% for trail in paginator.page_trail %}
+									{% if page.url == trail.path %}
+									<span class="active">{{ trail.num }}</span>
+									{% else %}
+									<a href="{{ trail.path | remove: 'index.html' }}" title="{{ trail.title }}">{{ trail.num }}</a> 
+									{% endif %}
+								{% endfor %}
+
+								{% if paginator.next_page %}
+								<a href="{{ paginator.next_page_path }}" class="pagination-links-right" title="Следующая страница">&raquo;</a>
+								{% else %}
+								<span class="pagination-links-right" title="Следующая страница">&raquo;</span>
+								{% endif %}
+								  
 							</div>
+							{% endif %}
+
+
 						</div>
 
-				</div>
-				<div class="col-md-4">
-					<aside class="main-aside">
-						 <div class="aside-box">
-							 <img src="img/ad/ad-vertical.jpg" alt="alt" class="img-responsive">
-						 </div>
-
-						 <div class="aside-box">
-							 <div class="latest-box">
-								 <div class="lb-header">
-									 Последние статьи:
-								 </div>
-
-								 <div class="lb-list">
-									<div class="lb-item">
-										<a href="#" class="lb-catname">Россия</a>
-										<div class="lb-body">
-											<a href="#" class="lb-body-header">Самые необычне рестораны России</a>
-											<div class="lb-footer">
-												<div class="item-comments" title="Количество комментариев">
-													<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-													<span class="date">25/05/2018</span>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="lb-item">
-										<a href="#" class="lb-catname">Мир</a>
-										<div class="lb-body">
-											<a href="#" class="lb-body-header">В Монако презентовали новый проект по расширению территории княжества</a>
-											<div class="lb-footer">
-												<div class="item-comments" title="Количество комментариев">
-													<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-													<span class="date">25/05/2018</span>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="lb-item">
-										<a href="#" class="lb-catname">Искусство</a>
-										<div class="lb-body">
-											<a href="#" class="lb-body-header">Куда пойти на "Ночь в музее" в Москве</a>
-											<div class="lb-footer">
-												<div class="item-comments" title="Количество комментариев">
-													<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-													<span class="date">25/05/2018</span>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="lb-item">
-										<a href="#" class="lb-catname">Россия</a>
-										<div class="lb-body">
-											<a href="#" class="lb-body-header">Самые необычне рестораны России</a>
-											<div class="lb-footer">
-												<div class="item-comments" title="Количество комментариев">
-													<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">15</a>
-													<span class="date">25/05/2018</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								 </div>
-
-							 </div>
-							</aside>
-
-						 <div class="aside-box">
-							 latest comments
-						 </div>
-
+					</div>
+					<div class="col-md-4">
+{% include /main-aside.html %}
 					</div>
 				</div>
 			</div>
@@ -410,59 +97,40 @@
 	</section>
 
 	<div class="pagination text-center d-none d-md-block">
-		<a href="#" class="btn">Следующая страница <i class="fa fa-angle-double-right"></i></a>
-		<div class="pagination-links">
-			<span class="pagination-links-left" title="Предыдущая страница">&laquo;</span>
-			<span class="active">1</span>
-			<a href="#">2</a>
-			<a href="#">3</a>
-			<a href="#">4</a>
-			<a href="#">5</a>
-			<a href="" class="pagination-links-right" title="Следующая страница">&raquo;</a>
-		</div>
+
+			{% if paginator.total_pages > 1 %}
+				{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path }}" class="btn">Следующая страница <i class="fa fa-angle-double-right"></i></a>
+				{% endif%}
+			{% endif %}
+
+			{% if paginator.page_trail %}
+			<div class="pagination-links">
+
+				{% if paginator.previous_page %}
+				<a href="{{ paginator.previous_page_path }}" class="pagination-links-left" title="Предыдущая страница">&laquo;</a>
+				{% else %}
+				<span class="pagination-links-left" title="Предыдущая страница">&laquo;</span>
+				{% endif %}
+
+				{% for trail in paginator.page_trail %}
+					{% if page.url == trail.path %}
+					<span class="active">{{ trail.num }}</span>
+					{% else %}
+					<a href="{{ trail.path | remove: 'index.html' }}" title="{{ trail.title }}">{{ trail.num }}</a> 
+					{% endif %}
+				{% endfor %}
+
+				{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path }}" class="pagination-links-right" title="Следующая страница">&raquo;</a>
+				{% else %}
+				<span class="pagination-links-right" title="Следующая страница">&raquo;</span>
+				{% endif %}
+					
+			</div>
+			{% endif %}
+
+
 	</div>
-	
-	<footer class="main-footer">
-		<div class="container">
 
-			<nav class="main-menu footer-menu">
-					<ul>
-							<li class="active"><a href="#">Главная</a></li>
-							<li><a href="#">Мир</a></li>
-							<li><a href="#">Россия</a></li>
-							<li class="dd-list">
-								<div>Категории</div>
-								<div class="dd-links">
-									<a href="#">Наука и техника</a>
-									<a href="#">Искусство</a>
-									<a href="#">Кулинария</a>
-									<a href="#">Приключения</a>
-								</div>
-							</li>
-							<li><a href="#">О сайте</a></li>
-					</ul>
-			</nav>
-
-			<nav class="soc">
-				<ul>
-					<li><a href="#"><i class="fa fa-vk"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-rss"></i></a></li>
-				</ul>
-			</nav>
-
-		</div>
-	</footer>
-	<footer class="bottom-footer">
-		<div class="container text-center">
-			<div class="footer-copy">2018 © <span class="logo logo-footer logo-litera">FliptheWOrld</span></div>
-			<p>Копирование контента и размещение на других сайтах запрещено</p>
-		</div>
-	</footer>
-
-	<script src="js/scripts.min.js"></script>
-
-</body>
-</html>
+{% include /footer.html %}

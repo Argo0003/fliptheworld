@@ -19,6 +19,7 @@ gulp.task('browser-sync', function() {
 		},
 		notify: false,
 		open: false,
+		port: 3001,
 		// tunnel: true,
 		// tunnel: "projectname", //Demonstration page: http://projectname.localtunnel.me
 	})
